@@ -1,0 +1,19 @@
+<!-- views/ihm/buildCommands.ejs -->
+
+<p hidden>
+<commands directory="<%=oncreate['prerequisite']['directory']%>">
+    <%_ for(var i in oncreate['prerequisite']['environment']) { %>
+        <% let env=oncreate['prerequisite']['environment'][i] %>
+        <environment name="<%=env%>"></environment> 
+    <% } %>
+    <%_ for(var i in oncreate['prerequisite']['resources']) { %>
+        <% let env=oncreate['prerequisite']['resources'][i] %>
+        <resource><%=env%></resource>
+    <% } %>
+    <%_ for(var i in oncreate['commands']) { %>
+        <% let cmd=oncreate['commands'][i] %>
+        <% let tagname=Object.keys(cmd)[0] %>
+        <<%=tagname%>> <%=cmd['execute']%></<%=tagname%>>
+    <% } %>
+</commands>
+</p>

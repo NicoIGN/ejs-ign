@@ -1,0 +1,12 @@
+<!-- views/ihm/oncreate.ejs -->
+
+<input type="button" id="<%=id%>" value="Executer">
+<script src="<%=js_folder%>/oncreate.js" name="<%=id%>" params="<%=params%>"></script>
+<ul id="console"></ul>
+
+<!--script>
+    var ConsoleLogHTML = require('console-log-html');
+    ConsoleLogHTML.connect(document.getElementById("console")); // Redirect log messages
+    ConsoleLogHTML.disconnect(); // Stop redirecting
+</script-->
+<script src="<%=js_folder%>/onsetparameters.js"></script>
