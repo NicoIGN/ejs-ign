@@ -4,8 +4,10 @@ const debug = require('debug')('depends');
 
 function enable(object, enabling) {
   debug('enable(', object, enabling, ')');
-  object.disabled = (!enabling);
-  Array.prototype.forEach.call(object.children, (child) => enable(child, enabling));
+  if (object != null) {
+    object.disabled = (!enabling);
+    Array.prototype.forEach.call(object.children, (child) => enable(child, enabling));
+  }
 }
 
 function activateDependencies(master) {
