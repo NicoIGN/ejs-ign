@@ -7,7 +7,7 @@
   const fs = require('fs');
 
   // eslint-disable-next-line import/no-unresolved
-  const ignGpao = require('ejs-electron-ign-gpao');
+  const ignGpao = require('ejs-ign');
   // eslint-disable-next-line import/no-dynamic-require
   const depends = require(`${ignGpao.scriptFolder()}/depends`);
 
