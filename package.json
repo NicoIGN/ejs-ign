@@ -14,21 +14,22 @@
         "url": "git+https://github.com/NicoIGN/ejs-ign.git"
     },
     "keywords": [
-                 "electron",
-                 "IGN",
-                 "Institut Geographique National",
-                 "gpao",
-                 "ihm",
-                 "interface",
-                 "json",
-                 "ejs"
-                 ],
+        "electron",
+        "IGN",
+        "Institut Geographique National",
+        "gpao",
+        "ihm",
+        "interface",
+        "json",
+        "ejs"
+    ],
     "author": "Nicolas Bellaiche",
     "license": "CC0-1.0",
     "devDependencies": {
         "eslint": "^7.22.0",
         "eslint-import-resolver-webpack": "^0.12.1",
-        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-react": "^7.23.1",
         "lint": "^0.7.0"
     },
     "dependencies": {
@@ -42,6 +43,7 @@
         "express-validator": "^6.5.0",
         "jsonschema": "^1.2.6",
         "minimist": "^1.2.5",
+        "npmrc": "^1.1.1",
         "path": "^0.12.7"
     },
     "bugs": {

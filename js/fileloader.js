@@ -1,7 +1,5 @@
-/* eslint no-param-reassign: [2, { "props": false }] */
-
 {
-// eslint-disable-next-line import/no-unresolved
+  // eslint-disable-next-line import/no-unresolved
   const { dialog, currentWindow } = require('electron').remote;
   const debug = require('debug')('fileloader');
   const fs = require('fs');

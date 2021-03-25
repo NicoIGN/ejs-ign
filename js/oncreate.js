@@ -1,5 +1,5 @@
 {
-// eslint-disable-next-line import/no-unresolved
+  // eslint-disable-next-line import/no-unresolved
   const ignGpao = require('ejs-ign');
   // eslint-disable-next-line import/no-unresolved
   const { dialog } = require('electron').remote;
@@ -95,7 +95,7 @@
     // get post-validation commands
     const commands = document.getElementsByTagName('commands');
     if (commands === undefined) {
-    // eslint-disable-next-line no-console
+      // eslint-disable-next-line no-console
       console.log(dialog.showErrorBox('Error', 'no post-validation commands defined '));
       return;
     }
@@ -111,7 +111,7 @@
     Array.prototype.forEach.call(environment, (item) => {
       const name = item.getAttribute('name');
       if (process.env[name] === undefined) {
-      // eslint-disable-next-line no-console
+        // eslint-disable-next-line no-console
         console.log(dialog.showErrorBox('Error', `environment variable ${name} not defined`));
         return;
       }
@@ -132,14 +132,14 @@
       resourceFile = resolveEnv(resourceFile, environmentExec.env);
       try {
         if (!fs.existsSync(resourceFile)) {
-        // file does not exist
-        // eslint-disable-next-line no-console
+          // file does not exist
+          // eslint-disable-next-line no-console
           console.log(dialog.showErrorBox('Error', `resource ${resourceFile} missing`));
           return;
         }
       } catch (err) {
-      // file does not exist
-      // eslint-disable-next-line no-console
+        // file does not exist
+        // eslint-disable-next-line no-console
         console.log(dialog.showErrorBox('Exception', err.message));
       }
     });
@@ -156,7 +156,7 @@
 
     const consoleItem = document.querySelector('#console');
     if (consoleItem === undefined) {
-    // eslint-disable-next-line no-console
+      // eslint-disable-next-line no-console
       console.log(dialog.showErrorBox('Error', 'no console'));
     }
 
@@ -165,10 +165,10 @@
     const executelist = commands[0].getElementsByTagName('execute');
     const failed = processExecute(executelist, filename, directory, environmentExec);
     if (failed > 0) {
-    // eslint-disable-next-line no-console
+      // eslint-disable-next-line no-console
       console.log(dialog.showErrorBox('Error', 'at least one command has failed. See log for more information'));
     }
-  // ConsoleLogHTML.disconnect(); // Stop redirecting
+    // ConsoleLogHTML.disconnect(); // Stop redirecting
   };
 
   //

@@ -49,7 +49,9 @@ function readValue(object, jsonData) {
 }
 
 function append(array1, array2) {
-  Object.entries(array2).forEach(([key, value]) => { array1[key] = value; });
+  Object.entries(array2).forEach(([key, value]) => {
+    array1[key] = value;
+  });
 
   return array1;
 }

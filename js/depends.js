@@ -17,8 +17,8 @@ function activateDependencies(master) {
   const depends = document.querySelectorAll('depends');
   for (let i = 0; i < depends.length; i += 1) {
     if (depends[i].getAttribute('master') === master.id) {
-      debug("depends[i]['master'] ", depends[i].getAttribute('master'));
-      debug("depends[i]['slave'] ", depends[i].getAttribute('slave'));
+      debug('depends[i][\'master\'] ', depends[i].getAttribute('master'));
+      debug('depends[i][\'slave\'] ', depends[i].getAttribute('slave'));
       debug('master.checked ', master.checked);
 
       const asyncElement = document.querySelector(`#${depends[i].getAttribute('slave')}`);
