@@ -1,6 +1,6 @@
 {
     "name": "ejs-ign",
-    "version": "2.1.6",
+    "version": "2.1.7",
     "description": "module to build an html interface from a json, used for the specific needs of the French National Geographic Institute (IGN). Further development may result in a wider potential use of the module.",
     "bin": {
         "ejs-ign": "index.js"
@@ -51,6 +51,5 @@
         "url": "https://github.com/NicoIGN/ejs-ign/issues"
     },
     "homepage": "https://github.com/NicoIGN/ejs-ign#readme",
-    "main": "index.js",
-    "type": "module"
+    "main": "index.js"
 }
