@@ -348,7 +348,7 @@ function addsubschemas(v) {
       Type: {
         type: 'string',
         pattern: '^Dependency$',
-        required: true,
+        required: false,
       },
     },
   };
