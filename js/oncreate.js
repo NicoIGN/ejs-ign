@@ -37,6 +37,19 @@
     return newstring;
   }
 
+//
+//
+//
+
+function resolveDico(genericString, jsonData) {
+  let specificString = genericString;
+  Object.keys(jsonData).forEach((entry) => {
+    specificString = replaceAll(specificString, `$${entry}$`, jsonData[entry]);
+    debug('specificString: ', specificString, 'after replaceing: ', entry, 'by', jsonData[entry]);
+  });
+  return specificString;
+}
+
   //
   //
   //
@@ -74,10 +87,10 @@
   //
   //
 
-  async function processExecute(executelist, filename, directory, environmentExec) {
+  async function processExecute(executelist, filename, directory, environmentExec, jsonData) {
     Array.prototype.slice.call(executelist).reduce(async (previousPromise, item) => {
       await previousPromise;
-      return execute(resolveEnv(item.innerHTML, environmentExec.env));
+      return execute(resolveEnv(resolveDico(item.innerHTML, jsonData), environmentExec.env));
     }, Promise.resolve());
   }
 
@@ -163,7 +176,7 @@
     ConsoleLogHTML.connect(consoleItem); // Redirect log messages
 
     const executelist = commands[0].getElementsByTagName('execute');
-    const failed = processExecute(executelist, filename, directory, environmentExec);
+    const failed = processExecute(executelist, filename, directory, environmentExec, jsonData);
     if (failed > 0) {
       // eslint-disable-next-line no-console
       console.log(dialog.showErrorBox('Error', 'at least one command has failed. See log for more information'));
